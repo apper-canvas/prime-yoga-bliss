@@ -1,26 +1,11 @@
-import { Routes, Route } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import Layout from "@/components/organisms/Layout";
-import Home from "@/components/pages/Home";
-import Book from "@/components/pages/Book";
-import MySessions from "@/components/pages/MySessions";
-import Profile from "@/components/pages/Profile";
-import Payment from "@/components/pages/Payment";
-import Confirmation from "@/components/pages/Confirmation";
+import { router } from "@/router/index.jsx";
 
 const App = () => {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="book" element={<Book />} />
-          <Route path="my-sessions" element={<MySessions />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="payment" element={<Payment />} />
-          <Route path="confirmation" element={<Confirmation />} />
-        </Route>
-      </Routes>
+      <RouterProvider router={router} />
       <ToastContainer
         position="top-right"
         autoClose={3000}
